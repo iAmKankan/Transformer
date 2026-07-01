@@ -2,8 +2,9 @@
 ### 3.5 Positional Encoding
 Since our model contains no [recurrence][1] and no [convolution][2], for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence. To this end, we add "positional encodings" to the input embeddings at the bottoms of the encoder and decoder stacks.
 
-Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. n is the sequence length, d is the representation dimension, k is the kernel size of convolutions and r the size of the neighborhood in restricted self-attention. Layer Type Complexity per Layer Sequential Maximum Path Length Operations Self-Attention O(n 2 · d) O(1) O(1) Recurrent O(n · d 2 ) O(n) O(n) Convolutional O(k · n · d 2 ) O(1) O(logk(n)) Self-Attention (restricted) O(r · n · d) O(1) O(n/r) 
+Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. $n$ is the sequence length, $d$ is the representation dimension, $k$ is the kernel size of convolutions and $r$ is the size of the neighbourhood in restricted self-attention. 
 
+<img width="1206" height="263" alt="image" src="https://github.com/user-attachments/assets/ea225e40-c512-4ec4-8390-2a00fc69324e" />
 
 The positional encodings have the same dimension $d_{model}$ as the embeddings, so that the two can be summed. There are many choices of positional encodings, learned and fixed [8]. 
 
