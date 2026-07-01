@@ -16,7 +16,10 @@ $$\Large {\color{Purple}\begin{matrix*}
 \end{matrix*}} $$
 
 
+
 where $pos$ is the position, and $i$ is the dimension. That is, each dimension of the positional encoding corresponds to a **sinusoid**. The wavelengths form a geometric progression from $2 \pi$ to $10000 \times 2 \pi$. We chose this function because we hypothesised it would allow the model to easily learn to attend by relative positions, since for any fixed offset $k$, $P E_{pos+k}$ can be represented as a linear function of $P E_{pos}$. We also experimented with using learned positional embeddings [8] instead, and found that the two versions produced nearly identical results (see Table 3 row (E)). We chose the sinusoidal version because it may allow the model to extrapolate to sequence lengths longer than the ones encountered during training.
+
+---
 
 
 [1]: https://share.google/aimode/qveb3RiTDnFjn4gCf "Recurrence in a neural network is a mechanism where the output from a previous step is fed back into the network as input for the current step. This creates a loop, allowing the network to maintain a memory of past events to process sequential or time-series data"
